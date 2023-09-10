@@ -16,14 +16,19 @@
     <%= form.text_field :title %>
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
+  <%# <div> %>
+    <%# <%= form.label :description, style: "display: block" %>
+    <%# <%= form.text_area :description %>
+  <%# </div> %>
 
   <div>
     <%= form.label :image, style: "display: block" %>
     <%= form.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.rich_text_area :content %>
   </div>
 
   <div>
