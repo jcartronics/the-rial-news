@@ -6,3 +6,7 @@
 
   <%= button_to "Destroy this post", @post, method: :delete, data: { confirm: "Estas seguro?" }, class: "btn btn-danger my-2" %>
 </div>
+
+<h2>Comentarios:</h2>
+
+<%= render "comments/comments" %>

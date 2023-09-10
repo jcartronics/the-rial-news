@@ -1,0 +1,14 @@
+<div class="d-flex mb-1">
+  <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+  <div class="ms-3">
+    <div class="fw-bold"><%= comment.user.email %> dice:</div>
+    <div class="comment">
+      <p>
+      <%= comment.content %> <span class="text-muted fst-italic mb-2 comentario-fecha"><%= comment.created_at.strftime("%d/%m/%Y %H:%M")%></span>
+        <% if user_signed_in? && (current_user == comment.user || current_user.admin?) %>
+          <%= link_to "X", [comment.post, comment], method: :delete, data: { confirm: '¿Estás seguro de que deseas eliminar este comentario?', turbo_method: :delete }, class: "btn btn-danger borrar-comentario" %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>

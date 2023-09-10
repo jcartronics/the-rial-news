@@ -1,0 +1,17 @@
+  <section class="mb-5">
+        <div class="card bg-light">
+            <div class="card-body">
+                <!-- Comentario individual-->
+                <% @post.comments.each do |comment| %>
+                    <%= render comment %>
+                <% end %>
+
+                <% if user_signed_in? %>
+                    <!-- Formulario-->
+                    <%= render "comments/form" %>
+                <% else %>
+                    <p class="m-2"><strong>Debes iniciar sesión para comentar.</strong></p>
+                <% end %>
+            </div>
+        </div>
+    </section>
