@@ -1,0 +1,4 @@
+  <%= form_for([@post, Comment.new], :html => {:class => "mt-4"}) do |f| %>
+    <%= f.text_area :content, placeholder: 'Unete a la conversación y deja un comentario...', class: "form-control" %>
+    <%= f.submit 'Comentar', class: "btn btn-primary mt-2" %>
+  <% end %>

@@ -8,23 +8,5 @@
 </div>
 
 <h2>Comentarios:</h2>
-<ul>
-  <% @post.comments.each do |comment| %>
-    <div>
-      <strong><%= comment.user.email %></strong> dice:
-      <%= comment.content %>
-      <% if user_signed_in? && (current_user == comment.user || current_user.admin?) %>
-        <%= link_to "X", [comment.post, comment], method: :delete, data: { confirm: '¿Estás seguro de que deseas eliminar este comentario?' }, class: "btn btn-danger" %>
-      <% end %>
-    </div>
-  <% end %>
-</ul>
 
-<% if user_signed_in? %>
-  <%= form_for([@post, Comment.new]) do |f| %>
-    <%= f.text_area :content, placeholder: 'Añadir un comentario...' %>
-    <%= f.submit 'Comentar' %>
-  <% end %>
-<% else %>
-  <p>Debes iniciar sesión para comentar.</p>
-<% end %>
+<%= render "comments/comments" %>
