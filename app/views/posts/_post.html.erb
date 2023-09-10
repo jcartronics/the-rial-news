@@ -1,17 +1,18 @@
-<div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= post.description %>
-  </p>
-
-  <p>
-    <strong>Image:</strong>
-    <%= post.image %>
-  </p>
-
-</div>
+<article id="<%= dom_id post %>">
+  <!-- Post header-->
+  <header class="mb-4">
+    <!-- Post title-->
+    <h1 class="fw-bolder mb-1"><%= post.title %></h1>
+    <!-- Post meta content-->
+    <div class="text-muted fst-italic mb-2">Actualizado el <%= post.updated_at.strftime("%d/%m/%Y") %> a las <%= post.updated_at.strftime("%H:%M") %> hrs. Autor: <%= post.user.email %></div>
+    <!-- Post categories-->
+    <%# <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a>
+            <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a> %>
+  </header>
+  <!-- Preview image figure-->
+  <figure class="mb-4"><img class="img-fluid rounded" src="https://dummyimage.com/900x400/ced4da/6c757d.jpg" alt="..." /></figure>
+  <!-- Post content-->
+  <section class="mb-5">
+    <p class="fs-5 mb-4"><%= post.description %></p>
+  </section>
+</article>
